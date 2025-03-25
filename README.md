@@ -5,7 +5,7 @@ Ich werde ein Levelbassiertes Spiel entwickeln welches sich mit der Türsteher T
 ## Kernelemente
 -**Landing Page** mit HTML, CSS und jQuery
 -**Main Game** mit HTML, CSS und jQuery, die Visuelle Gestalltung erlogt durch verschiedene Sprite Sheeds.
-- **Speicherung des Fortschritts** per Local Storage
+-**Speicherung des Fortschritts** per Local Storage
 ## Erweiterungen (optional, falls Zeit bleibt)
 -**Taschenkontrollen**
 -**Fähigkeiten**
