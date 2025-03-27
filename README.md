@@ -7,5 +7,7 @@ Ich entwickle ein Level-basiertes Spiel, das die Herausforderungen des Türstehe
 - **Main Game** mit HTML, CSS und jQuery, die Visuelle Gestalltung erlogt durch verschiedene Sprite Sheeds.
 - **Speicherung des Fortschritts** per Local Storage
 ### Erweiterungen (optional, falls Zeit bleibt)
+-**Dialoge**
+-**verschiedene Enden**
 - **Taschenkontrollen**
 - **Fähigkeiten**
