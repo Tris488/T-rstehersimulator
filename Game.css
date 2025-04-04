@@ -1,0 +1,128 @@
+body {
+    background-image: url('Hintergrund.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+.anzeige {
+    position: absolute; /* Positionierung auf der Seite */    top: 0.3vh; /* Abstand vom unteren Rand */
+    left: 0; /* Startet von ganz links */
+    width: 96%;
+    height: 65px; /* Festgelegte Höhe für den Hintergrund */
+    background: linear-gradient(to right, #861f7a, #47484a); /* Hintergrundfarbe */
+    display: flex; /* Flexbox für bessere Kontrolle */
+    justify-content: space-between; /* Verteilt die Buttons gleichmäßig */
+    align-items: center; /* Zentriert die Buttons vertikal */
+    padding: 0 2vw;
+}#Days, #Money {
+     width: 300px;
+     height: auto;
+     border-radius: 10px;
+     color: white;
+     font-family: 'Staatliches', sans-serif;
+     font-size: 25px;
+     text-align: center;
+     text-decoration: none;
+     padding: 15px 0;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     margin: 0 4px;
+ }
+
+#Days {
+    background: linear-gradient(to right, #546e7a, #90a4ae); /* Grauer Farbverlauf */
+}
+
+#Money {
+    background: linear-gradient(to right, #388e3c, #81c784); /* Grüner Farbverlauf */
+}
+.person {
+    position: absolute;
+    bottom: 5vh; /* Abstand vom unteren Rand */
+    right: 2vw; /* Abstand vom rechten Rand */
+}
+
+.id-card {
+    position: absolute;
+    top: 5.5vh;
+    left: 2vw;
+    width: 400px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.picture {
+    width: 160px;
+    height: 160px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.picture img {
+    width: 150px;
+    height: auto;
+}
+
+/* Button Container */
+.button {
+    position: absolute; /* Positionierung auf der Seite */
+    bottom: 0.3vh; /* Abstand vom unteren Rand */
+    left: 0; /* Startet von ganz links */
+    width: 96%;
+    height: 60px; /* Festgelegte Höhe für den Hintergrund */
+    background-color: lightgray; /* Hintergrundfarbe */
+    display: flex; /* Flexbox für bessere Kontrolle */
+    justify-content: space-between; /* Verteilt die Buttons gleichmäßig */
+    align-items: center; /* Zentriert die Buttons vertikal */
+    padding: 0 2vw;
+}
+
+/* Button Styling */
+#JA, #NEIN {
+    width: 300px; /* Breite der Buttons */
+    border-radius: 10px;
+    color: white;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 4px;
+}
+
+#JA {
+    background: linear-gradient(to right, #2980b9, #6dd5fa); /* Blaue Farbe für "JA" */
+}
+#JA:hover {
+    background: gray; /* Farbverlauf umkehren */
+    box-shadow: 0 4px 12px rgba(41, 128, 185, 0.5); /* Intensiverer Schatten beim Hover */
+}
+#NEIN {
+    background: linear-gradient(to right, #c62828, #ff8a80); /* Rote Farbe für "NEIN" */
+}
+#NEIN:hover {
+    background: gray;/* Farbverlauf umkehren */
+    box-shadow: 0 4px 12px rgba(198, 40, 40, 0.5); /* Intensiverer Schatten beim Hover */
+}

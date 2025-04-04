@@ -1,0 +1,62 @@
+body{
+    background: #000;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 20px;
+    grid-template-rows: 1fr;
+
+    width: 90%;
+    max-width: 1200px;
+    padding: 50px;
+    margin: auto;
+    place-items: center; /* Zentriert die Items im Grid */
+}
+
+#header {
+    text-align: center;
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 45px;
+    grid-column-end: span 2; /* Header über beide Spalten strecken */
+    color: #cecece;
+}
+
+
+.start-card {
+    width: 300px;
+    border-radius: 10px;
+    background-color: #1f4ff1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+.options-card {
+    width: 300px;
+    border-radius: 10px;
+    background-color: crimson;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+.coins-display{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: gold;
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
