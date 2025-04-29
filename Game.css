@@ -13,7 +13,7 @@ body {
     left: 0; /* Startet von ganz links */
     width: 96%;
     height: 65px; /* Festgelegte Höhe für den Hintergrund */
-    background: linear-gradient(to right, #861f7a, #47484a); /* Hintergrundfarbe */
+    background: linear-gradient(to top, #dd21dd, #7c1b72); /* Hintergrundfarbe */
     display: flex; /* Flexbox für bessere Kontrolle */
     justify-content: space-between; /* Verteilt die Buttons gleichmäßig */
     align-items: center; /* Zentriert die Buttons vertikal */
@@ -59,7 +59,7 @@ body {
     align-items: center;
     background: white;
     font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+    background: linear-gradient(to bottom, #c8b49c, #ae967b);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -91,7 +91,7 @@ body {
     left: 0; /* Startet von ganz links */
     width: 96%;
     height: 60px; /* Festgelegte Höhe für den Hintergrund */
-    background-color: lightgray; /* Hintergrundfarbe */
+    background: linear-gradient(to bottom, #4e1250, #681766);
     display: flex; /* Flexbox für bessere Kontrolle */
     justify-content: space-between; /* Verteilt die Buttons gleichmäßig */
     align-items: center; /* Zentriert die Buttons vertikal */
