@@ -1,0 +1,47 @@
+{
+  "events": {
+    "haare": {
+      "konversation": [
+        "Warum darf ich nicht rein?",
+        "Sie sehen ganz anders aus als auf dem Ausweisfoto.",
+        "Das liegt nur an meinen Haaren, ich hab sie jetzt blond gefärbt!"
+      ],
+      "konversationJa": [
+        "Ach so, das erklärt's. Na dann, viel Spaß!",
+        "Ja passt"
+      ],
+      "konversationNein": [
+        "Tut mir leid, das Foto passt einfach nicht zur Person vor mir.",
+        "Was?! Nur wegen meiner Haare? Das ist doch lächerlich!"
+      ]
+    },
+    "flirt": {
+      "konversation": [
+        "Hey, du siehst gut aus.",
+        "Danke, aber ich muss deinen Ausweis sehen."
+      ],
+      "konversationJa": [
+        "Okay, alles sieht gut aus – viel Spaß!",
+        "Alles klar."
+      ],
+      "konversationNein": [
+        "Tut mir leid, das reicht nicht.",
+        "Schade, wir hätten Spaß gehabt..."
+      ]
+    },
+    "falscherausweis": {
+      "konversation": [
+        "Das ist nicht dein Ausweis, oder?",
+        "Äh... doch... vielleicht..."
+      ],
+      "konversationJa": [
+        "Na gut, ich glaub dir mal.",
+        "Hoffentlich bereue ich das nicht."
+      ],
+      "konversationNein": [
+        "Sorry, aber das sieht nach einem Fake aus.",
+        "Verdammt!"
+      ]
+    }
+  }
+}
