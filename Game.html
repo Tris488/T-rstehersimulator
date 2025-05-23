@@ -10,6 +10,51 @@
     <script type="text/javascript" src="Game.js"></script>
 </head>
 <body>
+<div id="rulebook" class="rulebook">
+    <div class="rulebook-content">
+        <div class="book-spine"></div>
+        <button class="close-book" onclick="closeRulebook()">x</button>
+
+        <div class="book-left">
+            <div class="day-display">TAG <span id="rulebook-day">1</span></div>
+            <h2>Einlassbestimmungen</h2>
+
+            <h3>Grundregeln:</h3>
+            <ul>
+                <li>Ausweis muss gültig sein</li>
+                <li>Person muss volljährig sein (18+)</li>
+                <li>Foto muss zur Person passen</li>
+                <li>Keine offensichtlichen Fälschungen</li>
+            </ul>
+
+            <h3>Heutige Sonderregeln:</h3>
+            <ul id="special-rules">
+                <li>Keine Personen mit gefärbten Haaren</li>
+                <li>Dresscode: Keine Sportkleidung</li>
+            </ul>
+        </div>
+
+        <div class="book-right">
+            <h3>Wichtige Hinweise:</h3>
+            <p>Bei Verdacht auf gefälschte Ausweise sofort abweisen!</p>
+
+            <h3>Tagesbonus:</h3>
+            <p>Pro richtige Entscheidung: <strong>10€</strong></p>
+            <p>Tagesabschluss-Bonus: <strong>50€</strong></p>
+
+            <h3>Warnung:</h3>
+            <p>Manche Gäste versuchen dich zu überreden oder abzulenken. Bleib wachsam!</p>
+
+            <div>
+                    "Ein guter Türsteher kennt seine Regeln, seine fähigkeiten und weis immer was um ihn herum passiert!"
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Buch-Icon (wenn geschlossen) -->
+<div id="book-icon" class="book-icon hidden" onclick="openRulebook()"></div>
 
 <!-- Anzeigeleiste -->
 <div class="anzeige">

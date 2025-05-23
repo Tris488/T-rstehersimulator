@@ -3,15 +3,15 @@ let counter = 0;
 let right = 0;
 let event;
 let eventcount;
-let personenCounter = 0; // Zähler für abgehandelte Personen
-let dailyVisitors = []; // Array für Personen, die heute schon da waren
-const MAX_PERSONEN = 5; // Maximum 5 Personen pro Tag
+let personenCounter = 0;
+let dailyVisitors = [];
+const MAX_PERSONEN = 5;
 let auswahl;
 let korrekteantwort;
 let todaycoins;
 $(document).ready(function() {
-    loadGameState(); // Lade gespeicherte Daten
-    loadDailyVisitors(); // Lade heutige Besucher
+    loadGameState();
+    loadDailyVisitors();
     start();
 });
 
@@ -29,7 +29,7 @@ function loadGameState() {
 }
 
 function loadDailyVisitors() {
-    // Lade Liste der heutigen Besucher
+
     const currentDay = localStorage.getItem('days') || '0';
     const savedVisitors = localStorage.getItem(`dailyVisitors_day_${currentDay}`);
 
@@ -41,21 +41,92 @@ function loadDailyVisitors() {
 }
 
 function saveDailyVisitors() {
-    // Speichere Liste der heutigen Besucher
     const currentDay = localStorage.getItem('days') || '0';
     localStorage.setItem(`dailyVisitors_day_${currentDay}`, JSON.stringify(dailyVisitors));
 }
 
 function saveGameState() {
-    // Speichere aktuelle Daten in Local Storage
     localStorage.setItem('days', $('#days-count').text());
     localStorage.setItem('money', $('#coins-count').text());
 }
+function openRulebook() {
+    $('#book-icon').addClass('hidden');
+
+    $('#rulebook')
+        .removeClass('hidden closing')
+        .addClass('opening');
+
+    setTimeout(() => {
+        $('#rulebook').removeClass('opening');
+    }, 500);
+}
+
+function closeRulebook() {
+    $('#rulebook').addClass('closing');
+
+    setTimeout(() => {
+        $('#rulebook')
+            .addClass('hidden')
+            .removeClass('closing');
+        $('#book-icon').removeClass('hidden');
+    }, 500);
+}
+
+function updateDailyRules() {
+    const currentDay =  localStorage.getItem('days');
+
+    $.getJSON("rules.json", function(data) {
+        $('#rulebook-day').text(currentDay);
+
+        const tagesregel = data.tagesregeln[currentDay] || data.tagesregeln["1"];
+
+        $('.book-left h2').text(`Tag ${currentDay}: ${tagesregel.titel}`);
+
+        const regelHTML = tagesregel.regeln.map(regel => `<li>${regel}</li>`).join('');
+        $('#special-rules').html(regelHTML);
+
+        $('.book-right p strong').eq(0).text(`${tagesregel.bonus.proRichtig}€`);
+        $('.book-right p strong').eq(1).text(`${tagesregel.bonus.tagesbonus}€`);
+
+        if (data.warnungen[currentDay]) {
+            $('.book-right p[style*="italic"]').text(`"${data.warnungen[currentDay]}"`);
+        }
+
+
+
+    });
+}
+
+function initRulebook() {
+    const savedDay = localStorage.getItem('days');
+    const currentDay = savedDay ? parseInt(savedDay) : 1;
+
+    $('#rulebook-day').text(currentDay);
+
+    updateDailyRules(currentDay);
+
+    openRulebook();
+
+    setTimeout(() => {
+        closeRulebook();
+    }, 5000);
+}
+
+$(document).ready(function() {
+    $('#book-icon').on('click', function() {
+        openRulebook();
+    });
+
+    $('.close-book').on('click', function() {
+        closeRulebook();
+    });
+});
 
 function start() {
     todaycoins=0;
     $("#dialog").empty();
     takeaperson();
+    initRulebook();
 }
 
 function takeaperson() {
@@ -68,21 +139,17 @@ function takeaperson() {
     showKonversation([
         "Gerne hier!"
     ]);
-
-    // Wähle eine zufällige Person aus, die heute noch nicht da war
     let attempts = 0;
     do {
         person = Math.floor(Math.random() * 8);
         attempts++;
 
-        // Verhindere Endlosschleife falls alle Personen schon da waren
         if (attempts > 50) {
             console.log("Alle verfügbaren Personen wurden bereits verwendet");
             break;
         }
     } while (dailyVisitors.includes(person));
 
-    // Lade Personendaten
     $.getJSON("game.json", function(data) {
         let selectedPerson = data["personen"][person];
         $("#vorname").text(selectedPerson.vorname);
@@ -94,13 +161,11 @@ function takeaperson() {
         event = selectedPerson.event;
         korrekteantwort = selectedPerson.korrekt;
 
-        // Füge Person zur heutigen Besucherliste hinzu
         if (!dailyVisitors.includes(person)) {
             dailyVisitors.push(person);
             saveDailyVisitors();
         }
 
-        // WICHTIG: click() erst aufrufen NACHDEM die Daten geladen sind
         click();
     });
 }
@@ -109,10 +174,8 @@ function nextPersonOrEndDay() {
     personenCounter++;
     let currentMoney = parseInt($('#coins-count').text()) || 0;
 
-    // Debug: Zeige was verglichen wird
     console.log("Auswahl:", auswahl, "Korrekte Antwort:", korrekteantwort);
 
-    // Belohnung für korrekte Entscheidung
     if (auswahl === korrekteantwort) {
         currentMoney += 10;
         todaycoins +=10;
@@ -124,10 +187,9 @@ function nextPersonOrEndDay() {
     $('#coins-count').text(currentMoney);
 
     if (personenCounter >= MAX_PERSONEN) {
-        // Tag beenden nach 5 Personen
+
         endDay();
     } else {
-        // Nächste Person laden
         setTimeout(() => {
             takeaperson();
         }, 3000);
@@ -135,32 +197,27 @@ function nextPersonOrEndDay() {
 }
 
 function endDay() {
-    // Tag-Counter erhöhen
     let currentDays = parseInt($('#days-count').text()) || 0;
     currentDays++;
     $('#days-count').text(currentDays);
 
-    // Bonus für vollständigen Tag
+
     let currentMoney = parseInt($('#coins-count').text()) || 0;
     currentMoney += 50; // Tagesbonus
     todaycoins +=50;
     $('#coins-count').text(currentMoney);
 
-    // Spielstand speichern
     saveGameState();
 
-    // Neue Tag beginnt - dailyVisitors zurücksetzen
     dailyVisitors = [];
     personenCounter = 0;
 
-    // Zeige Tagesabschluss-Dialog
     showKonversation([
         "Gut gemacht! Dein Arbeitstag ist beendet.",
         `Du hast ${todaycoins}€ verdient.`,
         "Kehre zum Menü zurück..."
     ]);
 
-    // Nach 4 Sekunden zurück zum Gamemenu
     setTimeout(() => {
         window.location.href = 'Gamemenu.html';
     }, 4000);
@@ -168,7 +225,7 @@ function endDay() {
 
 function click() {
     $('#JA').off('click').on('click', function () {
-        auswahl = true; // JA = true
+        auswahl = true;
 
         if (event && eventcount === 1) {
             $.getJSON("events.json", function (data) {
@@ -189,7 +246,7 @@ function click() {
     });
 
     $('#NEIN').off('click').on('click', function () {
-        auswahl = false; // NEIN = false
+        auswahl = false;
 
         if (event) {
             $.getJSON("events.json", function (data) {
@@ -200,8 +257,7 @@ function click() {
                     showKonversation(eventData.konversation);
                     eventcount++;
                 } else if (eventData && eventData.konversationNein && eventcount === 1) {
-                    // Zweite Ablehnung: andere Konversation anzeigen,
-                    // danach nächste Person oder Tag beenden
+
                     showKonversation(eventData.konversationNein);
                     setTimeout(() => {
                         nextPersonOrEndDay();

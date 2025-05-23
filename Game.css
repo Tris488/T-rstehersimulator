@@ -145,3 +145,221 @@ body {
     overflow-y: auto;
     z-index: 100;
 }
+/* Regelwerk-Buch Styles */
+.rulebook {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    z-index: 1000;
+    transition: all 0.5s ease;
+}
+
+.rulebook-content {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8B6F47 0%, #A0826D 50%, #8B6F47 100%);
+    border: 3px solid #654321;
+    border-radius: 15px;
+    box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+}
+
+.book-left {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #f4e8d0 0%, #e8dcc0 100%);
+    border-right: 2px solid #8B6F47;
+    border-radius: 15px 0 0 15px;
+    padding: 30px 25px;
+    position: relative;
+    overflow-y: auto;
+}
+
+.book-right {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, #f4e8d0 0%, #e8dcc0 100%);
+    border-radius: 0 15px 15px 0;
+    padding: 30px 25px;
+    position: relative;
+    overflow-y: auto;
+}
+
+
+.book-spine {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #654321 0%, #8B6F47 50%, #654321 100%);
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+
+.close-book {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: #8B0000;
+    border: 2px solid #654321;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 20;
+}
+
+.close-book:hover {
+    background: #A52A2A;
+    transform: scale(1.1);
+}
+
+
+.book-icon {
+    position: absolute;
+    top: 600px;
+    left: 20px;
+    width: 80px;
+    height: 100px;
+    background: linear-gradient(135deg, #8B6F47 0%, #A0826D 50%, #8B6F47 100%);
+    border: 2px solid #654321;
+    border-radius: 5px 15px 15px 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.book-icon:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.book-icon::before {
+    content: "📖";
+    font-size: 40px;
+}
+
+/* Text-Styling im Buch */
+.rulebook h2 {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 28px;
+    color: #2c1810;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.rulebook h3 {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 22px;
+    color: #3d2914;
+    margin: 15px 0 10px 0;
+}
+
+.rulebook p, .rulebook li {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 16px;
+    color: #2c1810;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+.rulebook ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.rulebook li::before {
+    content: "• ";
+    color: #8B0000;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+
+.day-display {
+    background: #8B0000;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+@keyframes openBook {
+    from {
+        transform: translate(-50%, -50%) scale(0) rotateY(90deg);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes closeBook {
+    from {
+        transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(0) rotateY(90deg);
+        opacity: 0;
+    }
+}
+
+.rulebook.opening {
+    animation: openBook 0.5s ease forwards;
+}
+
+.rulebook.closing {
+    animation: closeBook 0.5s ease forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.book-left::before,
+.book-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+            repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(139, 111, 71, 0.05) 20px,
+                    rgba(139, 111, 71, 0.05) 21px
+            );
+    pointer-events: none;
+}
