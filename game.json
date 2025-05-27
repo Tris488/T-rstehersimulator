@@ -1,0 +1,113 @@
+{
+  "personen": [
+    {
+        "id": 0,
+        "vorname": "Sina",
+        "nachname": "Riegel",
+        "geburtstag": "17.03.2007",
+        "geschlecht": "W",
+        "charakter": "Personen/Frauen/Sina/ryoko_school_normaltalk.png",
+        "picturefeld": "Personen/Frauen/Sina/blondiausweis.png",
+        "korrekt": true,
+        "event": null,
+        "stil":"schick"
+      },
+    {
+      "id": 1,
+      "vorname": "Maria",
+      "nachname": "Klos",
+      "geburtstag": "03.09.2009",
+      "geschlecht": "W",
+      "charakter": "Personen/Frauen/Maria/Maria.png",
+      "picturefeld": "Personen/Frauen/Maria/Mariaausweis.png",
+      "korrekt": false,
+      "event": null,
+      "stil":"schick"
+    },
+
+    {
+      "id": 2,
+      "vorname": "Peter",
+      "nachname": "Zwegert",
+      "geburtstag": "03.03.1999",
+      "geschlecht": "M",
+      "charakter": "Personen\\Männer\\Peter\\Peter.png",
+      "picturefeld": "Personen\\Männer\\Peter\\Peterausweis.png",
+      "korrekt": true,
+      "event": null,
+      "stil":"normal"
+    },
+    {
+      "id": 3,
+      "vorname": "Pascal",
+      "nachname": "Hertwig",
+      "geburtstag": "06.04.2004",
+      "geschlecht": "M",
+      "charakter": "Personen\\Männer\\Pascal\\Pascal.png",
+      "picturefeld": "Personen\\Männer\\Pascal\\Pascalausweis.png",
+      "korrekt": true,
+      "event": null,
+      "stil":"assi"
+    },
+    {
+      "id": 4,
+      "vorname": "Anna",
+      "nachname": "Kunzel",
+      "geburtstag": "20.01.2001",
+      "geschlecht": "W",
+      "charakter": "Personen\\Frauen\\Anna\\Anna.png",
+      "picturefeld": "Personen\\Frauen\\Anna\\Annaausweis.png",
+      "korrekt": true,
+      "event": "flirt",
+      "stil":"normal"
+    },
+    {
+      "id": 5,
+      "vorname": "Lotta Marie",
+      "nachname": "Durchholz",
+      "geburtstag": "02.06.2003",
+      "geschlecht": "W",
+      "charakter": "Personen\\Frauen\\Lotta\\Lotta.png",
+      "picturefeld": "Personen\\Frauen\\Lotta\\Lottaausweis.png",
+      "korrekt": true,
+      "event": "flirt",
+      "stil":"normal"
+    },
+    {
+      "id": 6,
+      "vorname": "Kira",
+      "nachname": "Kasanke",
+      "geburtstag": "05.09.2005",
+      "geschlecht": "W",
+      "charakter": "Personen\\Frauen\\Kira\\Kira.png",
+      "picturefeld": "Personen\\Frauen\\Kira\\Kiraausweis.png",
+      "korrekt": true,
+      "event": "haare",
+      "stil":"schick"
+    },
+    {
+      "id": 7,
+      "vorname": "Kira",
+      "nachname": "Kasanke",
+      "geburtstag": "05.09.2005",
+      "geschlecht": "W",
+      "charakter": "Personen\\Frauen\\Maria\\Mariafake.png",
+      "picturefeld": "Personen\\Frauen\\Kira\\Kiraausweis.png",
+      "korrekt": false,
+      "event": "falscherausweis",
+      "stil":"normal"
+    },
+    {
+      "id": 8,
+      "vorname": "Ali",
+      "nachname": "Yilmafü",
+      "geburtstag": "01.01.1999",
+      "geschlecht": "M",
+      "charakter": "Personen\\Männer\\Afgane\\Ali.png",
+      "picturefeld": "Personen\\Männer\\Afgane\\Aliausweis.png",
+      "korrekt": "True",
+      "event": "ali",
+      "stil":"normal"
+    }
+  ]
+}
