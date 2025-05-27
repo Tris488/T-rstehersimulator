@@ -15,7 +15,7 @@ $(document).ready(function() {
 });
 
 function updateStats() {
-    const days = localStorage.getItem('days') || '0';
+    const days = localStorage.getItem('days') || '1';
     const money = localStorage.getItem('money') || '0';
 
     $('#current-day').text(days);
@@ -56,6 +56,9 @@ function confirmReset() {
     // NEU: Lösche gekaufte Items
     localStorage.removeItem('purchasedItems');
     localStorage.removeItem('itemEffects');
+
+    // NEU: Lösche Club-Besitzer Status
+    localStorage.removeItem('clubOwner');
 
     // Modal schließen
     closeResetModal();

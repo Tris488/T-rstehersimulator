@@ -269,7 +269,10 @@ function takeaperson() {
 
     let attempts = 0;
     do {
-        person = Math.floor(Math.random() * 8);
+        do{person = Math.floor(Math.random() * 17);
+        }while(person!=8);
+
+
         attempts++;
 
         if (attempts > 50) {
@@ -755,7 +758,6 @@ function showKostenBildschirm() {
     });
 }
 
-// Neue Funktion: Bezahle die Kosten
 function bezahleKosten(neuerKontostand, kosten) {
     if (neuerKontostand < 0) {
         // Game Over - Kein Geld
