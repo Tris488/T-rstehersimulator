@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Optionen - Türsteher Simulator</title>
+    <link rel="stylesheet" type="text/css" href="Options.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="Options.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>OPTIONEN</h1>
+
+    <!-- Aktuelle Statistiken -->
+    <div class="options-section">
+        <div class="option-title">AKTUELLE STATISTIKEN</div>
+        <div class="current-stats">
+            <div class="stat-item">
+                <span class="stat-label">Tag:</span>
+                <span class="stat-value" id="current-day">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Kontostand:</span>
+                <span class="stat-value"><span id="current-money">0</span>€</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spielstand zurücksetzen -->
+    <div class="options-section">
+        <div class="option-item">
+            <div class="option-title">SPIELSTAND ZURÜCKSETZEN</div>
+            <div class="option-description">
+                Löscht deinen gesamten Fortschritt und setzt das Spiel auf den Anfang zurück.
+                Diese Aktion kann nicht rückgängig gemacht werden!
+            </div>
+            <button class="button reset-button" id="reset-button">SPIELSTAND LÖSCHEN</button>
+        </div>
+    </div>
+
+    <!-- Erfolgsnachricht -->
+    <div class="success-message" id="success-message">
+        Spielstand erfolgreich zurückgesetzt!
+    </div>
+
+    <!-- Zurück Button -->
+    <a href="Landingpage.html" class="button back-button">ZURÜCK ZUM HAUPTMENÜ</a>
+</div>
+
+<!-- Bestätigungs-Modal -->
+<div id="resetModal" class="modal">
+    <div class="modal-content">
+        <h2>WIRKLICH ZURÜCKSETZEN?</h2>
+        <p>Dein gesamter Fortschritt wird gelöscht:<br>
+            Tag <span id="modal-day">0</span> | <span id="modal-money">0</span>€</p>
+        <button class="button confirm-button" id="confirm-button">JA, LÖSCHEN</button>
+        <button class="button cancel-button" id="cancel-button">ABBRECHEN</button>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Türsteher Simulator</title>
+    <link rel="stylesheet" type="text/css" href="Shop.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="Shop.js"></script>
+</head>
+<body>
+<div class="shop-container">
+    <div id="header">
+        <h1>AUSRÜSTUNGS-SHOP</h1>
+    </div>
+
+    <!-- Geld-Anzeige -->
+    <div class="money-display">
+        <h2>Dein Konto: <span id="money-amount">0</span>€</h2>
+    </div>
+
+    <!-- Shop Items Grid -->
+    <div class="items-grid">
+        <!-- Celjuso Handschellen -->
+        <div class="shop-item" data-item="handschellen-celjuso" data-price="150">
+            <div class="item-image">
+                <img src="Shop/handschellen-celjuso.png" alt="Celjuso Handschellen">
+            </div>
+            <h3>Celjuso Handschellen</h3>
+            <p class="item-price">150€</p>
+            <div class="item-status" id="handschellen-celjuso-status">Nicht gekauft</div>
+            <button class="info-button" data-item="handschellen-celjuso">INFO</button>
+            <div class="item-description" id="handschellen-celjuso-desc" style="display: none;">
+                <p>Deutsche Premium-Handschellen von Celjuso. Besonders robust und zuverlässig für den professionellen Einsatz. TIPP.</p>
+                <button class="buy-button" data-item="handschellen-celjuso" data-price="150">KAUFEN</button>
+            </div>
+        </div>
+
+        <!-- Smith & Wesson Handschellen -->
+        <div class="shop-item" data-item="handschellen-sw" data-price="40">
+            <div class="item-image">
+                <img src="Shop/handschellen-sw.png" alt="Smith & Wesson Handschellen">
+            </div>
+            <h3>Smith & Wesson Handschellen</h3>
+            <p class="item-price">40€</p>
+            <div class="item-status" id="handschellen-sw-status">Nicht gekauft</div>
+            <button class="info-button" data-item="handschellen-sw">INFO</button>
+            <div class="item-description" id="handschellen-sw-desc" style="display: none;">
+                <p>Amerikanische Profi-Handschellen von Smith & Wesson. Doppelt verriegelt und extra sicher.</p>
+                <button class="buy-button" data-item="handschellen-sw" data-price="180">KAUFEN</button>
+            </div>
+        </div>
+
+        <!-- Schlagstock -->
+        <div class="shop-item" data-item="schlagstock" data-price="120">
+            <div class="item-image">
+                <img src="Shop/schlagstock.png" alt="Schlagstock">
+            </div>
+            <h3>Schlagstock</h3>
+            <p class="item-price">120€</p>
+            <div class="item-status" id="schlagstock-status">Nicht gekauft</div>
+            <button class="info-button" data-item="schlagstock">INFO</button>
+            <div class="item-description" id="schlagstock-desc" style="display: none;">
+                <p>Teleskop-Schlagstock zur Selbstverteidigung. Schreckt aggressive Gäste ab und gibt dir mehr Autorität.</p>
+                <button class="buy-button" data-item="schlagstock" data-price="200">KAUFEN</button>
+            </div>
+        </div>
+
+        <!-- Retevis Funkgerät -->
+        <div class="shop-item" data-item="funkgeraet-retevis" data-price="40">
+            <div class="item-image">
+                <img src="funkgeraet-retevis.png" alt="Retevis Funkgerät">
+            </div>
+            <h3>Retevis Funkgerät</h3>
+            <p class="item-price">40€</p>
+            <div class="item-status" id="funkgeraet-retevis-status">Nicht gekauft</div>
+            <button class="info-button" data-item="funkgeraet-retevis">INFO</button>
+            <div class="item-description" id="funkgeraet-retevis-desc">
+                <p>Solides Einsteiger-Funkgerät von Retevis. 16 Kanäle und gute Reichweite für die Kommunikation mit Kollegen.</p>
+                <button class="buy-button" data-item="funkgeraet-retevis" data-price="80">KAUFEN</button>
+            </div>
+        </div>
+
+        <!-- Kenwood Funkgerät -->
+        <div class="shop-item" data-item="funkgeraet-kenwood" data-price="200">
+            <div class="item-image">
+                <img src="funkgeraet-kenwood.png" alt="Kenwood Funkgerät">
+            </div>
+            <h3>Kenwood Funkgerät</h3>
+            <p class="item-price">200€</p>
+            <div class="item-status" id="funkgeraet-kenwood-status">Nicht gekauft</div>
+            <button class="info-button" data-item="funkgeraet-kenwood">INFO</button>
+            <div class="item-description" id="funkgeraet-kenwood-desc">
+                <p>Professionelles Funkgerät von Kenwood. Verschlüsselte Kommunikation und erweiterte Reichweite für höchste Sicherheit.</p>
+                <button class="buy-button" data-item="funkgeraet-kenwood" data-price="150">KAUFEN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Erfolgsmeldung -->
+    <div id="purchase-message" class="purchase-message"></div>
+
+    <!-- Zurück Button -->
+    <a href="Gamemenu.html" class="back-button">ZURÜCK ZUM MENÜ</a>
+</div>
+</body>
+</html>

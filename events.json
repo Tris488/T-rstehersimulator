@@ -42,6 +42,23 @@
         "Sorry, aber das sieht nach einem Fake aus.",
         "Verdammt!"
       ]
+    },
+    "ali": {
+      "startDialog": [
+        "Vallah du Pissa, hier mein Ausweis aber lass mich schnell rein!"
+      ],
+      "konversation": [
+        "Vallah du Peach, ich hau dich kaputt!",
+        "Komm komm um die Ecke, ich zeig dir was du bist!"
+      ],
+      "konversationJa": [
+        "Okay okay, geh rein...",
+        "Siehste, geht doch du Lellek!"
+      ],
+      "konversationNein": [
+        "Tut mir leid, Sie erfüllen den Dresscode nicht.",
+        "Was?! Du Hurensohn!"
+      ]
     }
   }
 }

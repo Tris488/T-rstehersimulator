@@ -1,0 +1,99 @@
+{
+  "kosten": {
+    "0": {
+      "titel": "Erster Tag - Keine Kosten",
+      "posten": [],
+      "gesamt": 0
+    },
+    "1": {
+      "titel": "Lebenshaltungskosten",
+      "posten": [
+        {
+          "name": "Miete",
+          "betrag": 30,
+          "beschreibung": "Tägliche Mietkosten für deine kleine Wohnung"
+        },
+        {
+          "name": "Essen",
+          "betrag": 15,
+          "beschreibung": "Grundnahrungsmittel für den Tag"
+        }
+      ],
+      "gesamt": 45
+    },
+    "2": {
+      "titel": "Lebenshaltungskosten",
+      "posten": [
+        {
+          "name": "Miete",
+          "betrag": 30,
+          "beschreibung": "Tägliche Mietkosten für deine kleine Wohnung"
+        },
+        {
+          "name": "Essen",
+          "betrag": 15,
+          "beschreibung": "Grundnahrungsmittel für den Tag"
+        }
+      ],
+      "gesamt": 45
+    },
+    "3": {
+      "titel": "Erhöhte Kosten",
+      "posten": [
+        {
+          "name": "Miete",
+          "betrag": 30,
+          "beschreibung": "Tägliche Mietkosten für deine kleine Wohnung"
+        },
+        {
+          "name": "Essen",
+          "betrag": 20,
+          "beschreibung": "Besseres Essen für mehr Energie"
+        },
+        {
+          "name": "Strom",
+          "betrag": 10,
+          "beschreibung": "Stromrechnung fällig"
+        }
+      ],
+      "gesamt": 60
+    },
+    "5": {
+      "titel": "Wochenend-Ausgaben",
+      "posten": [
+        {
+          "name": "Miete",
+          "betrag": 35,
+          "beschreibung": "Wochenend-Zuschlag vom Vermieter"
+        },
+        {
+          "name": "Essen",
+          "betrag": 25,
+          "beschreibung": "Wochenende = teureres Essen"
+        },
+        {
+          "name": "Versicherung",
+          "betrag": 20,
+          "beschreibung": "Haftpflichtversicherung für Türsteher"
+        }
+      ],
+      "gesamt": 80
+    },
+    "default": {
+      "titel": "Standard Kosten",
+      "posten": [
+        {
+          "name": "Miete",
+          "betrag": 30,
+          "beschreibung": "Tägliche Mietkosten"
+        },
+        {
+          "name": "Essen",
+          "betrag": 15,
+          "beschreibung": "Grundnahrungsmittel"
+        }
+      ],
+      "gesamt": 45
+    }
+  }
+}

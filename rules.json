@@ -1,0 +1,101 @@
+{
+  "tagesregeln": {
+    "1": {
+      "titel": "Erster Tag",
+      "regeln": [
+        "Ausweis muss gültig sein",
+        "Person muss volljährig sein (18+)",
+        "Foto muss zur Person passen",
+        "Alle Kleidungsstile erlaubt"
+      ],
+      "erlaubteStile": ["assi", "normal", "schick"],
+      "bonus": {
+        "proRichtig": 10,
+        "tagesbonus": 50
+      },
+      "default": {
+        "titel": "Standard Nacht",
+        "regeln": [
+          "Ausweis muss gültig sein",
+          "Person muss volljährig sein (18+)",
+          "Keine Assi-Styles",
+          "Normal und Schick erlaubt"
+        ],
+        "erlaubteStile": ["normal", "schick"],
+        "bonus": {
+          "proRichtig": 10,
+          "tagesbonus": 50
+        }
+      }
+    },
+    "2": {
+      "titel": "Dresscode aktiv",
+      "regeln": [
+        "Ausweis muss gültig sein",
+        "Person muss volljährig sein (18+)",
+        "Nur schicke und normale Kleidung erlaubt",
+        "Keine Assi-Styles mehr!"
+      ],
+      "erlaubteStile": ["normal", "schick"],
+      "bonus": {
+        "proRichtig": 10,
+        "tagesbonus": 50
+      }
+    },
+    "3": {
+      "titel": "Standard Abend",
+      "regeln": [
+        "Ausweis muss gültig sein",
+        "Person muss volljährig sein (18+)",
+        "Keine Assi-Styles",
+        "Normal und Schick erlaubt"
+      ],
+      "erlaubteStile": ["normal", "schick"],
+      "bonus": {
+        "proRichtig": 10,
+        "tagesbonus": 50
+      }
+    },
+    "4": {
+      "titel": "Gehobener Abend",
+      "regeln": [
+        "Ausweis muss gültig sein",
+        "Person muss volljährig sein (18+)",
+        "Keine Assi-Styles",
+        "Normal und Schick erlaubt"
+      ],
+      "erlaubteStile": ["normal", "schick"],
+      "bonus": {
+        "proRichtig": 15,
+        "tagesbonus": 75
+      }
+    },
+    "5": {
+      "titel": "Freitag - Wochenende!",
+      "regeln": [
+        "Ausweis muss gültig sein",
+        "Person muss volljährig sein (18+)",
+        "Nur schicke Kleidung!",
+        "Kein Assi- oder Normal-Style"
+      ],
+      "erlaubteStile": ["schick"],
+      "bonus": {
+        "proRichtig": 20,
+        "tagesbonus": 100
+      }
+    }
+  },
+  "erlaubteStile": {
+    "1": ["assi", "normal", "schick"],
+    "2": ["normale Gaderobe"],
+    "3": ["normal", "schick"],
+    "4": ["normal", "schick"],
+    "5": ["schick"]
+  },
+  "warnungen": {
+    "1": "Willkommen! Heute ist dein erster Tag. Sei aufmerksam!",
+    "2": "Ab heute gilt der Dresscode! Achte auf den Style der Gäste.",
+    "5": "Wochenende! Die Gäste erwarten gehobene Standards.",
+    "10": "Special Event heute! Nur VIP-Gäste erwünscht."
+  }
+}

@@ -1,49 +1,267 @@
-body{
+body {
     background: #000;
+    background-image: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
+
+/* Animierter Hintergrund-Effekt */
+body::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    grid-template-rows: 1fr 1fr;
-
+    gap: 30px;
+    grid-template-rows: auto 1fr;
     width: 90%;
     max-width: 1200px;
     padding: 50px;
     margin: auto;
-    place-items: center; /* Zentriert die Items im Grid */
+    place-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 #header {
     text-align: center;
     font-family: 'Black Ops One', sans-serif;
-    font-size: 45px;
-    grid-column-end: span 2; /* Header über beide Spalten strecken */
-    color: #cecece;
+    font-size: 60px;
+    grid-column: span 2;
+    margin-bottom: 50px;
+    position: relative;
 }
 
+#header h1 {
+    color: #fff;
+    text-shadow:
+            0 0 3px #fff,
+            0 0 6px #fff,
+            0 0 10px #ff00de,
+            0 0 15px #ff00de,
+            0 0 20px #ff00de;
+    animation: neon-flicker 1.5s infinite alternate;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 3px;
+}
 
-.start-card {
-    width: 300px;
+/* Neon Flicker Animation */
+@keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+                0 0 3px #fff,
+                0 0 6px #fff,
+                0 0 10px #ff00de,
+                0 0 15px #ff00de,
+                0 0 20px #ff00de;
+        filter: brightness(1.1);
+    }
+
+    20%, 24%, 55% {
+        text-shadow:
+                0 0 2px #fff,
+                0 0 4px #fff,
+                0 0 8px #ff00de,
+                0 0 12px #ff00de;
+        filter: brightness(0.9);
+    }
+}
+
+#header {
+    text-align: center;
+    font-family: 'Black Ops One', sans-serif;
+    grid-column: span 2;
+    margin-bottom: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header h1 {
+    color: #fff;
+    text-shadow:
+            0 0 2px #fff,
+            0 0 4px #fff,
+            0 0 8px #ff00de,
+            0 0 12px #ff00de;
+    animation: neon-flicker 1.5s infinite alternate;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 15px 30px;
+    font-size: 60px;
+    border: 2px solid #ff00de;
     border-radius: 10px;
-    background-color: #1f4ff1;
+    box-shadow:
+            inset 0 0 3px #ff00de,
+            0 0 3px #ff00de,
+            0 0 8px #ff00de;
+}
+
+/* Neon Flicker Animation */
+@keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+                0 0 2px #fff,
+                0 0 4px #fff,
+                0 0 8px #ff00de,
+                0 0 12px #ff00de;
+        filter: brightness(0.8);
+        box-shadow:
+                inset 0 0 3px #ff00de,
+                0 0 3px #ff00de,
+                0 0 8px #ff00de;
+    }
+
+    20%, 24%, 55% {
+        text-shadow:
+                0 0 1px #fff,
+                0 0 3px #fff,
+                0 0 6px #ff00de,
+                0 0 10px #ff00de;
+        filter: brightness(0.8);
+        box-shadow:
+                inset 0 0 2px #ff00de,
+                0 0 2px #ff00de,
+                0 0 6px #ff00de;
+    }
+}
+
+.start-card, .options-card {
+    width: 350px;
+    height: 120px;
+    border-radius: 15px;
     overflow: hidden;
     text-align: center;
     font-family: 'Staatliches', sans-serif;
-    font-size: 25px;
+    font-size: 30px;
     text-decoration: none;
-    color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.start-card {
+    background: linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%);
+}
+
+.start-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.start-card:hover::before {
+    left: 100%;
+}
+
+.start-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+            0 10px 30px rgba(41, 128, 185, 0.5),
+            0 0 20px rgba(109, 213, 250, 0.3);
+    filter: brightness(1.1);
 }
 
 .options-card {
-    width: 300px;
-    border-radius: 10px;
-    background-color: crimson;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    text-align: center;
-    font-family: 'Staatliches', sans-serif;
-    font-size: 25px;
-    text-decoration: none;
-    color: black;
+    background: linear-gradient(135deg, #c62828 0%, #ff8a80 100%);
+}
+
+.options-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.options-card:hover::before {
+    left: 100%;
+}
+
+.options-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+            0 10px 30px rgba(198, 40, 40, 0.5),
+            0 0 20px rgba(255, 138, 128, 0.3);
+    filter: brightness(1.1);
+}
+
+/* Zusätzliche visuelle Effekte */
+.start-card h2, .options-card h2 {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+}
+
+/* Kleine Partikel-Animation */
+@keyframes float {
+    0% { transform: translateY(0px); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(138, 43, 226, 0.6);
+    border-radius: 50%;
+    animation: float 10s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #header {
+        grid-column: span 1;
+    }
+
+    #header h1 {
+        font-size: 35px;
+        padding: 10px 20px;
+    }
+
+    .start-card, .options-card {
+        width: 300px;
+        height: 100px;
+        font-size: 25px;
+    }
 }
