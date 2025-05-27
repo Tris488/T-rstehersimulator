@@ -269,8 +269,8 @@ function takeaperson() {
 
     let attempts = 0;
     do {
-        do{person = Math.floor(Math.random() * 17);
-        }while(person!=8);
+        do{person = Math.floor(Math.random() * 18);
+        }while(person==8);
 
 
         attempts++;
@@ -832,7 +832,7 @@ function showKostenGameOver() {
 function showAliEvent() {
     // Verstecke normale UI
     $('#JA, #NEIN').hide();
-
+    $("#charakter img").attr("src", "Personen/Männer/Ali/Alimesser.png");
     // Zeige Event-Dialog
     $("#dialog").empty().append(`
         <div style="background: rgba(255,0,0,0.1); padding: 20px; border-radius: 10px; border: 2px solid red;">

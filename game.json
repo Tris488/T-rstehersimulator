@@ -192,6 +192,18 @@
       "korrekt": "True",
       "event": null,
       "stil":"normal"
+    },
+    {
+      "id": 17,
+      "vorname": "James",
+      "nachname": "Marcus",
+      "geburtstag": "01.03.2005",
+      "geschlecht": "M",
+      "charakter": "Personen\\Männer\\Dude1\\James.png",
+      "picturefeld": "Personen\\Männer\\Dude1\\Jamesausweis.png",
+      "korrekt": "True",
+      "event": null,
+      "stil":"assi"
     }
   ]
 }
